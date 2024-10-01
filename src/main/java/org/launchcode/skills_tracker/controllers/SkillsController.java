@@ -9,6 +9,7 @@ public class SkillsController {
 
     @GetMapping
     public String landingPage() {
+
         return "<h1>Skills Tracker</h1>" +
                 "<h2>We have a few skills we would like to learn. Here is the list!</h2>" +
                 "<ol>" +
@@ -16,10 +17,12 @@ public class SkillsController {
                 "<li>JavaScript</li>" +
                 "<li>Python</li>" +
                 "</ol>";
+
     }
 
     @GetMapping("form")
     public String formPage() {
+
         return "<html>" +
                 "<body>" +
                 "<form action='/info' >" +
@@ -47,10 +50,12 @@ public class SkillsController {
                 "</form>" +
                 "</body>" +
                 "</html>";
+
     }
 
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "info")
     public String infoPage(@RequestParam String name, @RequestParam String language1, @RequestParam String language2, @RequestParam String language3) {
+
         return "<h1>" + name + "'s favorite languages" + "</h1>" +
                 "<table>" +
                 "<tr>" +
@@ -70,6 +75,7 @@ public class SkillsController {
                 "<td>" + language3 + "</td>" +
                 "</tr>" +
                 "</table>";
+
     }
 
 }
